@@ -4,33 +4,40 @@ FetchIP-RB is a Ruby script that retrieves the user's public IP address and disp
 
 ## Features
 
-- Retrieves the user's public IP address.
+- Retrieves the user's public IP address. (IPv4 Only IPv6 support coming soon)
 - Displays detailed IP address information: ISP, country, region, city.
-- Shows the country's flag as an emoji.
-- Detects the primary language of the country and displays information in that language.
+- Shows the country's flag as an emoji. (e.g. 🇫🇷 for France - Not supported on Windows)
+- Detects the primary language of the country and displays information in that language. (only supports English, French, Spanish, Russian, Arabic and Chinese)
 - Fallback to English if the language is not supported.
 
 ## Installation
 
 A Python script is provided to facilitate the installation of Ruby on both Linux and macOS systems. This script automatically detects your operating system and installs Ruby using the appropriate method for your system.
+WARNING: This script does not work on Windows systems. Please follow the instructions below to install Ruby on Windows.
 
-### Steps to Use the Installation Script
+### Steps to Use the Installation Script (macOS and Linux)
 
 1. Download the `installrb.py` script.
 2. Run the script in your terminal:
     - On Linux: Use `sudo python3 installrb.py`.
     - On macOS: Simply run `python3 installrb.py`.
 3. The script will install Ruby on your system.
+4. Proceed to the [Usage](#usage) section.
+
+### Windows
+
+1. Download and install Ruby from the [RubyInstaller for Windows website](https://rubyinstaller.org/downloads/).
+2. Follow the instructions on the website to install Ruby.
+3. Proceed to the [Usage](#usage) section.
 
 ## Dependencies
 
 - Ruby
-- Internet access for HTTP requests
-- No external gems are required, as the script uses `net/http` and `json` included in Ruby's standard library.
+- Python 3 (only for the installation script/not required for the main script)
 
 ## Usage
 
-1. Ensure Ruby is installed on your system (use the installation script if needed).
+1. Ensure Ruby is installed on your system (use the installation script if needed). And you are connected to the Internet.
 2. Download the `fetchip-rb.rb` script.
 3. Run the script in your terminal using the command `ruby fetchip-rb.rb`.
 4. IP address information will appear in the terminal.

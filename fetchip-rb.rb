@@ -3,6 +3,9 @@ require 'json'
 
 # Method to convert country code to flag emoji
 def country_code_to_flag_emoji(country_code)
+  return '' if RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/
+
+
   base = 127397
   country_code.upcase.each_codepoint.map { |c| (base + c).chr(Encoding::UTF_8) }.join
 end
