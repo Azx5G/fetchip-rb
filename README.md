@@ -10,6 +10,18 @@ FetchIP-RB is a Ruby script that retrieves the user's public IP address and disp
 - Detects the primary language of the country and displays information in that language.
 - Fallback to English if the language is not supported.
 
+## Installation
+
+A Python script is provided to facilitate the installation of Ruby on both Linux and macOS systems. This script automatically detects your operating system and installs Ruby using the appropriate method for your system.
+
+### Steps to Use the Installation Script
+
+1. Download the `installrb.py` script.
+2. Run the script in your terminal:
+    - On Linux: Use `sudo python install-ruby.py`.
+    - On macOS: Simply run `python install-ruby.py`.
+3. The script will install Ruby on your system.
+
 ## Dependencies
 
 - Ruby
@@ -18,11 +30,10 @@ FetchIP-RB is a Ruby script that retrieves the user's public IP address and disp
 
 ## Usage
 
-1. Ensure Ruby is installed on your system.
+1. Ensure Ruby is installed on your system (use the installation script if needed).
 2. Download the `fetchip-rb.rb` script.
 3. Run the script in your terminal using the command `ruby fetchip-rb.rb`.
 4. IP address information will appear in the terminal.
-
 
 ## License
 
