@@ -99,23 +99,40 @@ translations = {
   },
 }
 
-# Obtaining external IP address
-uri_ip = URI('https://httpbin.org/ip')
-external_ip = JSON.parse(Net::HTTP.get(uri_ip))['origin']
+begin
+  # Obtaining external IP address
+  uri_ip = URI('https://httpbin.org/ip')
+  external_ip_response = Net::HTTP.get_response(uri_ip)
 
-# Obtaining IP details
-uri_details = URI("http://ip-api.com/json/#{external_ip}")
-ip_details = JSON.parse(Net::HTTP.get(uri_details))
+  if external_ip_response.is_a?(Net::HTTPSuccess)
+    external_ip = JSON.parse(external_ip_response.body)['origin']
 
-# Determine the language
-language = country_to_language[ip_details['countryCode']] || 'en'
-texts = translations[language]
+    # Obtaining IP details
+    uri_details = URI("http://ip-api.com/json/#{external_ip}")
+    ip_details_response = Net::HTTP.get_response(uri_details)
 
-# Print the results
-puts "#{texts['ip_address']}: #{external_ip}"
-puts "#{texts['isp']}: #{ip_details['isp']}"
-puts "#{texts['country']}: #{ip_details['country']} #{country_code_to_flag_emoji(ip_details['countryCode'])}"
-puts "#{texts['region']}: #{ip_details['regionName']}"
-puts "#{texts['city']}: #{ip_details['city']}"
+    if ip_details_response.is_a?(Net::HTTPSuccess)
+      ip_details = JSON.parse(ip_details_response.body)
+
+      # Determine the language
+      language = country_to_language[ip_details['countryCode']] || 'en'
+      texts = translations[language]
+
+      # Print the results
+      puts "#{texts['ip_address']}: #{external_ip}"
+      puts "#{texts['isp']}: #{ip_details['isp']}"
+      puts "#{texts['country']}: #{ip_details['country']} #{country_code_to_flag_emoji(ip_details['countryCode'])}"
+      puts "#{texts['region']}: #{ip_details['regionName']}"
+      puts "#{texts['city']}: #{ip_details['city']}"
+    else
+      raise "Error fetching IP details: #{ip_details_response.code}"
+    end
+  else
+    raise "Error fetching external IP: #{external_ip_response.code}"
+  end
+rescue SocketError => e
+  puts "Network error: #{e}"
+rescue StandardError => e
+  puts "An error occurred: #{e}"
+end
 # frozen_string_literal: true
-
