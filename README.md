@@ -18,8 +18,8 @@ A Python script is provided to facilitate the installation of Ruby on both Linux
 
 1. Download the `installrb.py` script.
 2. Run the script in your terminal:
-    - On Linux: Use `sudo python install-ruby.py`.
-    - On macOS: Simply run `python install-ruby.py`.
+    - On Linux: Use `sudo python3 installrb.py`.
+    - On macOS: Simply run `python3 installrb.py`.
 3. The script will install Ruby on your system.
 
 ## Dependencies
