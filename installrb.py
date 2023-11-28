@@ -73,3 +73,4 @@ if __name__ == "__main__":
             print("This script only supports Linux and macOS.")
     except Exception as e:
         print(f"An error occurred during Ruby installation: {e}")
+

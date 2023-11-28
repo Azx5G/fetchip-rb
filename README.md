@@ -1,14 +1,15 @@
 # FetchIP-RB
 
-FetchIP-RB is a Ruby script that retrieves the user's public IP address and displays detailed information such as the Internet Service Provider (ISP), country, region, city, and the country's flag as an emoji. The script also detects the primary language of the country associated with the IP address and displays the information in that language, with a fallback to English if the language is not supported.
+FetchIP-RB is a Ruby script that retrieves the user's public, local IP address and displays detailed information such as the Internet Service Provider (ISP), country, region, city, and the country's flag as an emoji. The script also detects the primary language of the country associated with the IP address and displays the information in that language, with a fallback to English if the language is not supported. And now detects the computer's operating system and the version.
 
 ## Features
 
-- Retrieves the user's public IP address. (IPv4 Only IPv6 support coming soon)
+- Retrieves the user's local/public IP address. (IPv4 Only IPv6 support coming soon)
 - Displays detailed IP address information: ISP, country, region, city.
 - Shows the country's flag as an emoji. (e.g. 🇫🇷 for France - Not supported on Windows)
 - Detects the primary language of the country and displays information in that language. (only supports English, French, Spanish, Russian, Arabic and Chinese)
 - Fallback to English if the language is not supported.
+- Detects the computer's operating system and the version.
 
 ## Installation
 
@@ -40,7 +41,7 @@ WARNING: This script does not work on Windows systems. Please follow the instruc
 1. Ensure Ruby is installed on your system (use the installation script if needed). And you are connected to the Internet.
 2. Download the `fetchip-rb.rb` script.
 3. Run the script in your terminal using the command `ruby fetchip-rb.rb`.
-4. IP address information will appear in the terminal.
+4. Informations will appear in the terminal.
 
 ## License
 
