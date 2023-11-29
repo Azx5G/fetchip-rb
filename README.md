@@ -1,3 +1,5 @@
+[![StandWithPalestine](https://github.com/Safouene1/support-palestine-banner/blob/master/StandWithPalestine.svg)](https://github.com/Safouene1/support-palestine-banner)
+
 # FetchIP-RB
 
 FetchIP-RB is a Ruby script that retrieves the user's public, local IP address and displays detailed information such as the Internet Service Provider (ISP), country, region, city, and the country's flag as an emoji. The script also detects the primary language of the country associated with the IP address and displays the information in that language, with a fallback to English if the language is not supported. And now detects the computer's operating system and the version.
