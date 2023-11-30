@@ -7,6 +7,7 @@ require 'json'
 require 'socket'
 require 'rbconfig'
 require_relative 'translations'
+require_relative 'countriesnativename'
 
 # Method to convert country code to flag emoji
 def country_code_to_flag_emoji(country_code)
@@ -88,12 +89,14 @@ begin
         end
       end
       os_name = get_os_name(os, '')
+      country_names = create_country_name_mapping
+      native_country_name = get_country_name_in_native_language(ip_details['country'], country_names)
       # Print the results
       puts "#{texts['ipv4_address']}: #{external_ip}"
       puts "#{texts['ipv6_address']}: #{external_ipv6}"
       puts "#{texts['local_ip']}: #{local_ip_address}"
       puts "#{texts['isp']}: #{ip_details['isp']}"
-      puts "#{texts['country']}: #{ip_details['country']} #{country_code_to_flag_emoji(ip_details['countryCode'])}"
+      puts "#{texts['country']}: #{native_country_name} #{country_code_to_flag_emoji(ip_details['countryCode'])}"
       puts "#{texts['region']}: #{ip_details['regionName']}"
       puts "#{texts['city']}: #{ip_details['city']}"
       puts "#{texts['os']}: #{os_name}"
