@@ -47,7 +47,7 @@ WARNING: This script does not work on Windows systems. Please follow the instruc
 
 ## License
 
-This project is distributed under the MIT license, which means you are free to use, modify, and distribute it.
+This project is distributed under the GNU Affero General Public License version 3.0 (AGPL-3.0). This license requires that any modifications and larger works based on this project must also be released under the same license. Additionally, if you run a modified version of this software in a network server or provide access to it to others in any way, you must also make the source code available under this license. 
 
 ## Author
 
