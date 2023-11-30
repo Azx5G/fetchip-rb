@@ -6,7 +6,7 @@ FetchIP-RB is a Ruby script that retrieves the user's public, local IP address a
 
 ## Features
 
-- Retrieves the user's local/public IP address. (IPv4 Only IPv6 support coming soon)
+- Retrieves the user's local/public IP address. (IPv4 and IPv6)
 - Displays detailed IP address information: ISP, country, region, city.
 - Shows the country's flag as an emoji. (e.g. 🇫🇷 for France - Not supported on Windows)
 - Detects the primary language of the country and displays information in that language. (only supports English, French, Spanish, Russian, Arabic and Chinese)

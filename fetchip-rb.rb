@@ -65,7 +65,8 @@ country_to_language = {
 # Translations
 translations = {
   'en' => {
-    'ip_address' => 'IP Address',
+    'ipv4_address' => 'IPv4 Address',
+    'ipv6_address' => 'IPv6 Address',
     'isp' => 'ISP',
     'country' => 'Country',
     'region' => 'Region',
@@ -75,7 +76,8 @@ translations = {
     'local_ip' => 'Local IP',
   },
   'fr' => {
-    'ip_address' => 'Adresse IP',
+    'ipv4_address' => 'Adresse IPv4',
+    'ipv6_address' => 'Adresse IPv6',
     'isp' => 'FAI',
     'country' => 'Pays',
     'region' => 'Région',
@@ -85,7 +87,8 @@ translations = {
     'local_ip' => 'IP Locale',
   },
   'es' => {
-    'ip_address' => 'Dirección IP',
+    'ipv4_address' => 'Dirección IPv4',
+    'ipv6_address' => 'Dirección IPv6',
     'isp' => 'Proveedor de Servicios de Internet',
     'country' => 'País',
     'region' => 'Región',
@@ -95,7 +98,8 @@ translations = {
     'local_ip' => 'IP Local',
   },
   'ru' => {
-    'ip_address' => 'IP-адрес',
+    'ipv4_address' => 'IPv4-адрес',
+    'ipv6_address' => 'IPv6-адрес',
     'isp' => 'Интернет-провайдер',
     'country' => 'Страна',
     'region' => 'Регион',
@@ -105,7 +109,8 @@ translations = {
     'local_ip' => 'Локальный IP',
   },
   'ar' => {
-    'ip_address' => 'عنوان الآي بي',
+    'ipv4_address' => 'عنوان آي بي في 4',
+    'ipv6_address' => 'عنوان آي بي في 6',
     'isp' => 'مزود الخدمة',
     'country' => 'البلد',
     'region' => 'المنطقة',
@@ -116,7 +121,8 @@ translations = {
 
   },
   'zh' => {
-    'ip_address' => 'IP地址',
+    'ipv4_address' => 'IPv4地址',
+    'ipv6_address' => 'IPv6地址',
     'isp' => '互联网服务提供商',
     'country' => '国家',
     'region' => '地区',
@@ -131,12 +137,25 @@ begin
   # Obtaining external IP address
   uri_ip = URI('https://httpbin.org/ip')
   external_ip_response = Net::HTTP.get_response(uri_ip)
+  uri_ipv6 = URI('https://ifconfig.me/ip')
+  external_ipv6_response = Net::HTTP.get_response(uri_ipv6)
+
+  if external_ipv6_response.is_a?(Net::HTTPSuccess)
+    external_ipv6 = external_ipv6_response.body
+  end
 
   if external_ip_response.is_a?(Net::HTTPSuccess)
     external_ip = JSON.parse(external_ip_response.body)['origin']
+    if external_ipv6 == external_ip
+      external_ipv6 = "N/A"
+    end
 
     # Obtaining IP details
-    uri_details = URI("http://ip-api.com/json/#{external_ip}")
+    if external_ipv6 == "N/A"
+      uri_details = URI("http://ip-api.com/json/#{external_ip}")
+    else
+      uri_details = URI("http://ip-api.com/json/#{external_ipv6}")
+    end
     ip_details_response = Net::HTTP.get_response(uri_details)
 
     if ip_details_response.is_a?(Net::HTTPSuccess)
@@ -179,7 +198,8 @@ begin
       end
       os_name = get_os_name(os, '')
       # Print the results
-      puts "#{texts['ip_address']}: #{external_ip}"
+      puts "#{texts['ipv4_address']}: #{external_ip}"
+      puts "#{texts['ipv6_address']}: #{external_ipv6}"
       puts "#{texts['local_ip']}: #{local_ip_address}"
       puts "#{texts['isp']}: #{ip_details['isp']}"
       puts "#{texts['country']}: #{ip_details['country']} #{country_code_to_flag_emoji(ip_details['countryCode'])}"
@@ -187,6 +207,7 @@ begin
       puts "#{texts['city']}: #{ip_details['city']}"
       puts "#{texts['os']}: #{os_name}"
       puts "#{texts['version']}: #{os_version}"
+
     else
       raise "Error fetching IP details: #{ip_details_response.code}"
     end

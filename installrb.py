@@ -1,3 +1,6 @@
+"""Install Ruby on Linux and macOS."""
+"""License: AGPL-3.0"""
+
 import subprocess
 import sys
 import platform
