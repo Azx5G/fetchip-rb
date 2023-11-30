@@ -165,19 +165,11 @@ begin
       language = country_to_language[ip_details['countryCode']] || 'en'
       texts = translations[language]
       # Determine Linux distro
-      def print_linux_distro
-        if File.exist?("/etc/os-release")
-          os_release_info = File.read("/etc/os-release")
-          distro_name = os_release_info.match(/^PRETTY_NAME="(.+)"$/)&.captures&.first
-
-          if distro_name
-            puts "#{distro_name}"
-          else
-            puts "Unknown Linux Version"
-          end
-        else
-          puts "Unknown Linux Version"
-        end
+      if File.exist?("/etc/os-release")
+        os_release_info = File.read("/etc/os-release")
+        distro_name = os_release_info.match(/^PRETTY_NAME="(.+)"$/)&.captures&.first
+      else
+        distro_name = 'Unknown Version'
       end
       # Determine the OS and the version
       os = RbConfig::CONFIG['host_os']
@@ -187,7 +179,7 @@ begin
       when /darwin|mac os/
         os_version = "macOS #{`sw_vers -productVersion`.strip}"
       when /linux/
-        os_version = print_linux_distro
+        os_version = distro_name
       else
         os_version = 'Unknown Version'
       end
