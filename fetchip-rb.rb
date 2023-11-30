@@ -169,13 +169,28 @@ begin
       os = RbConfig::CONFIG['host_os']
       case os
       when /mswin|mingw|cygwin/
-        os_version = `ver`.strip
+        os_version = `wmic os get Caption`.split("\n")[1].strip
       when /darwin|mac os/
-        os_version = `sw_vers -productVersion`.strip
+        os_version = "macOS #{`sw_vers -productVersion`.strip}"
       when /linux/
-        os_version = `uname -r`.strip
+        os_version = print_linux_distro
       else
         os_version = 'Unknown Version'
+      end
+      # Determine Linux distro
+      def print_linux_distro
+        if File.exist?("/etc/os-release")
+          os_release_info = File.read("/etc/os-release")
+          distro_name = os_release_info.match(/^PRETTY_NAME="(.+)"$/)&.captures&.first
+
+          if distro_name
+            puts "#{distro_name}"
+          else
+            puts "Unknown Linux Version"
+          end
+        else
+          puts "Unknown Linux Version"
+        end
       end
       # Determine local IP
       local_ip = Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
