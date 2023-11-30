@@ -175,7 +175,7 @@ begin
       os = RbConfig::CONFIG['host_os']
       case os
       when /mswin|mingw|cygwin/
-        os_version = `wmic os get Caption`.split("\n")
+        os_version = `wmic os get Caption`.split("\n")[2].strip
       when /darwin|mac os/
         os_version = "macOS #{`sw_vers -productVersion`.strip}"
       when /linux/
