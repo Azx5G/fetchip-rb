@@ -164,19 +164,6 @@ begin
       # Determine the language
       language = country_to_language[ip_details['countryCode']] || 'en'
       texts = translations[language]
-
-      # Determine the OS and the version
-      os = RbConfig::CONFIG['host_os']
-      case os
-      when /mswin|mingw|cygwin/
-        os_version = `wmic os get Caption`.split("\n")[1].strip
-      when /darwin|mac os/
-        os_version = "macOS #{`sw_vers -productVersion`.strip}"
-      when /linux/
-        os_version = print_linux_distro
-      else
-        os_version = 'Unknown Version'
-      end
       # Determine Linux distro
       def print_linux_distro
         if File.exist?("/etc/os-release")
@@ -192,6 +179,19 @@ begin
           puts "Unknown Linux Version"
         end
       end
+      # Determine the OS and the version
+      os = RbConfig::CONFIG['host_os']
+      case os
+      when /mswin|mingw|cygwin/
+        os_version = `wmic os get Caption`.split("\n")[1].strip
+      when /darwin|mac os/
+        os_version = "macOS #{`sw_vers -productVersion`.strip}"
+      when /linux/
+        os_version = print_linux_distro
+      else
+        os_version = 'Unknown Version'
+      end
+
       # Determine local IP
       local_ip = Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
       local_ip_address = local_ip ? local_ip.ip_address : 'Not Available'
