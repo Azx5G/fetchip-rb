@@ -1,6 +1,6 @@
 # FetchIP-RB
 # Copyright (c) 2023 Azx5G
-# Licensed under the MIT License
+# Licensed under the AGPL-3.0 License
 
 require 'net/http'
 require 'json'
