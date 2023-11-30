@@ -52,3 +52,13 @@ This project is distributed under the GNU Affero General Public License version 
 ## Author
 
 - Azx5G
+
+
+## Acknowledgements
+
+Special thanks to the following API providers for their essential services used in FetchIP-RB:
+
+- **Httpbin** (https://httpbin.org): For the API to retrieve the public IP address.
+- **Ifconfig.me** (https://ifconfig.me): For providing the public IPv6 address.
+- **IP-API** (http://ip-api.com): For detailed IP information like ISP, country, region, and city.
+- **Restcountries** (https://restcountries.com): For country data, including native names.
