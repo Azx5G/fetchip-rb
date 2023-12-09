@@ -165,6 +165,7 @@
     'os' => 'Operating System',
     'version' => 'OS Version',
     'local_ip' => 'Local IP',
+    'interrupted' => 'Interrupted.',
   },
   'fr' => {
     'ipv4_address' => 'Adresse IPv4',
@@ -176,6 +177,7 @@
     'os' => 'Système d’exploitation',
     'version' => 'Version OS',
     'local_ip' => 'IP Locale',
+    'interrupted' => 'Interrompu.',
   },
   'es' => {
     'ipv4_address' => 'Dirección IPv4',
@@ -187,6 +189,7 @@
     'os' => 'Sistema Operativo',
     'version' => 'Versión del SO',
     'local_ip' => 'IP Local',
+    'interrupted' => 'Interrumpido.',
   },
   'ru' => {
     'ipv4_address' => 'IPv4-адрес',
@@ -198,6 +201,7 @@
     'os' => 'Операционная Система',
     'version' => 'Версия ОС',
     'local_ip' => 'Локальный IP',
+    'interrupted' => 'Прервано.',
   },
   'ar' => {
     'ipv4_address' => 'عنوان آي بي في 4',
@@ -209,6 +213,7 @@
     'os' => 'نظام التشغيل',
     'version' => 'إصدار النظام',
     'local_ip' => 'الآي بي المحلي',
+    'interrupted' => 'مقطوع.',
 
   },
   'zh' => {
@@ -221,6 +226,7 @@
     'os' => '操作系统',
     'version' => '操作系统版本',
     'local_ip' => '本地IP',
+    'interrupted' => '已中断。',
   },
   'pt' => {
     'ipv4_address' => 'Endereço IPv4',
@@ -231,6 +237,7 @@
     'city' => 'Cidade',
     'os' => 'Sistema Operacional',
     'version' => 'Versão do SO',
+    'interrupted' => 'Interrompido.',
   },
   'de' => {
     'ipv4_address' => 'IPv4-Adresse',
@@ -242,6 +249,7 @@
     'os' => 'Betriebssystem',
     'version' => 'OS-Version',
     'local_ip' => 'Lokale IP',
+    'interrupted' => 'Unterbrochen.',
   },
   'ja' => {
     'ipv4_address' => 'IPv4アドレス',
@@ -253,6 +261,7 @@
     'os' => 'オペレーティングシステム',
     'version' => 'OSバージョン',
     'local_ip' => 'ローカルIP',
+    'interrupted' => '中断されました。',
   },
   'ko' => {
     'ipv4_address' => 'IPv4 주소',
@@ -264,6 +273,7 @@
     'os' => '운영 체제',
     'version' => 'OS 버전',
     'local_ip' => '로컬 IP',
+    'interrupted' => '중단되었습니다.',
   },
   'it' => {
     'ipv4_address' => 'Indirizzo IPv4',
@@ -275,6 +285,7 @@
     'os' => 'Sistema operativo',
     'version' => 'Versione OS',
     'local_ip' => 'IP locale',
+    'interrupted' => 'Interrotto.',
   },
   'nl' => {
     'ipv4_address' => 'IPv4-adres',
@@ -286,6 +297,7 @@
     'os' => 'Besturingssysteem',
     'version' => 'OS-versie',
     'local_ip' => 'Lokaal IP',
+    'interrupted' => 'Onderbroken.',
   },
   'tr' => {
     'ipv4_address' => 'IPv4 Adresi',
@@ -297,6 +309,7 @@
     'os' => 'İşletim Sistemi',
     'version' => 'OS Sürümü',
     'local_ip' => 'Yerel IP',
+    'interrupted' => 'Kesildi.',
   },
   'pl' => {
     'ipv4_address' => 'Adres IPv4',
@@ -308,6 +321,7 @@
     'os' => 'System operacyjny',
     'version' => 'Wersja systemu operacyjnego',
     'local_ip' => 'Lokalny IP',
+    'interrupted' => 'Przerwano.',
   },
   'sv' => {
     'ipv4_address' => 'IPv4-adress',
@@ -319,6 +333,7 @@
     'os' => 'Operativsystem',
     'version' => 'OS-version',
     'local_ip' => 'Lokal IP',
+    'interrupted' => 'Avbruten.',
   },
   'no' => {
     'ipv4_address' => 'IPv4-adresse',
@@ -330,6 +345,7 @@
     'os' => 'Operativsystem',
     'version' => 'OS-versjon',
     'local_ip' => 'Lokal IP',
+    'interrupted' => 'Avbrutt.',
   },
   'da' => {
     'ipv4_address' => 'IPv4-adresse',
@@ -341,6 +357,7 @@
     'os' => 'Operativsystem',
     'version' => 'OS-version',
     'local_ip' => 'Lokal IP',
+    'interrupted' => 'Afbrydes.',
   },
   'fi' => {
     'ipv4_address' => 'IPv4-osoite',
@@ -352,6 +369,7 @@
     'os' => 'Käyttöjärjestelmä',
     'version' => 'Käyttöjärjestelmän versio',
     'local_ip' => 'Paikallinen IP',
+    'interrupted' => 'Keskeytetty.',
   },
   'el' => {
     'ipv4_address' => 'Διεύθυνση IPv4',
@@ -363,6 +381,7 @@
     'os' => 'Λειτουργικό σύστημα',
     'version' => 'Έκδοση OS',
     'local_ip' => 'Τοπική IP',
+    'interrupted' => 'Διακόπηκε.',
   },
   'cs' => {
     'ipv4_address' => 'IPv4 Adresa',
@@ -374,6 +393,7 @@
     'os' => 'Operační systém',
     'version' => 'Verze OS',
     'local_ip' => 'Místní IP',
+    'interrupted' => 'Přerušeno.',
   },
   'hu' => {
     'ipv4_address' => 'IPv4 cím',
@@ -385,6 +405,7 @@
     'os' => 'Operációs rendszer',
     'version' => 'OS verzió',
     'local_ip' => 'Helyi IP',
+    'interrupted' => 'Megszakítva.',
   },
   'ro' => {
     'ipv4_address' => 'Adresă IPv4',
@@ -396,6 +417,7 @@
     'os' => 'Sistem de operare',
     'version' => 'Versiunea OS',
     'local_ip' => 'IP local',
+    'interrupted' => 'Întrerupt.',
   },
   'vi' => {
     'ipv4_address' => 'Địa chỉ IPv4',
@@ -407,6 +429,7 @@
     'os' => 'Hệ điều hành',
     'version' => 'Phiên bản OS',
     'local_ip' => 'IP cục bộ',
+    'interrupted' => 'Đã bị gián đoạn.',
   },
   'th' => {
     'ipv4_address' => 'ที่อยู่ IPv4',
@@ -418,6 +441,7 @@
     'os' => 'ระบบปฏิบัติการ',
     'version' => 'เวอร์ชัน OS',
     'local_ip' => 'IP ท้องถิ่น',
+    'interrupted' => 'ถูกขัดจังหวะ',
   },
   'id' => {
     'ipv4_address' => 'Alamat IPv4',
@@ -429,6 +453,7 @@
     'os' => 'Sistem Operasi',
     'version' => 'Versi OS',
     'local_ip' => 'IP Lokal',
+    'interrupted' => 'Dihentikan.',
   },
   'uk' => {
     'ipv4_address' => 'IPv4-адреса',
@@ -440,6 +465,7 @@
     'os' => 'Операційна система',
     'version' => 'Версія ОС',
     'local_ip' => 'Локальний IP',
+    'interrupted' => 'Перервано.',
   },
   'hr' => {
     'ipv4_address' => 'IPv4 adresa',
@@ -451,6 +477,7 @@
     'os' => 'Operativni sustav',
     'version' => 'Verzija OS-a',
     'local_ip' => 'Lokalna IP adresa',
+    'interrupted' => 'Prekinuto.',
   },
   'bg' => {
     'ipv4_address' => 'IPv4 адрес',
@@ -462,6 +489,7 @@
     'os' => 'Операционна система',
     'version' => 'Версия на ОС',
     'local_ip' => 'Локален IP',
+    'interrupted' => 'Прекъснато.',
   },
   'sk' => {
     'ipv4_address' => 'IPv4 adresa',
@@ -473,6 +501,7 @@
     'os' => 'Operačný systém',
     'version' => 'Verzia OS',
     'local_ip' => 'Lokálna IP',
+    'interrupted' => 'Prerušené.',
   },
   'lt' => {
     'ipv4_address' => 'IPv4 adresas',
@@ -484,6 +513,7 @@
     'os' => 'Operacinė sistema',
     'version' => 'OS versija',
     'local_ip' => 'Vietinis IP',
+    'interrupted' => 'Pertraukta.',
   },
   'sl' => {
     'ipv4_address' => 'IPv4 naslov',
@@ -495,6 +525,7 @@
     'os' => 'Operacijski sistem',
     'version' => 'Različica OS',
     'local_ip' => 'Lokalni IP',
+    'interrupted' => 'Prekinjeno.',
   },
   'lv' => {
     'ipv4_address' => 'IPv4 adrese',
@@ -506,6 +537,7 @@
     'os' => 'Operētājsistēma',
     'version' => 'OS versija',
     'local_ip' => 'Lokālais IP',
+    'interrupted' => 'Pārtraukts.',
   },
   'et' => {
     'ipv4_address' => 'IPv4 aadress',
@@ -517,6 +549,7 @@
     'os' => 'Operatsioonisüsteem',
     'version' => 'OS-i versioon',
     'local_ip' => 'Kohalik IP',
+    'interrupted' => 'Katkestatud.',
   },
   'am' => {
     'ipv4_address' => 'IPv4 հասցե',
@@ -528,6 +561,7 @@
     'os' => 'Համակարգչային համակարգ',
     'version' => 'OS տարբերակ',
     'local_ip' => 'Տեղական IP',
+    'interrupted' => 'Դադարեցված է։',
   },
   'hy' => {
     'ipv4_address' => 'IPv4 հասցե',
@@ -539,6 +573,7 @@
     'os' => 'Համակարգչային համակարգ',
     'version' => 'OS տարբերակ',
     'local_ip' => 'Տեղական IP',
+    'interrupted' => 'Դադարեցված է։',
   },
   'az' => {
     'ipv4_address' => 'IPv4 ünvanı',
@@ -550,6 +585,7 @@
     'os' => 'Əməliyyat sistemi',
     'version' => 'OS versiyası',
     'local_ip' => 'Yerli IP',
+    'interrupted' => 'Dayandırıldı.',
   },
   'bs' => {
     'ipv4_address' => 'IPv4 adresa',
@@ -561,6 +597,7 @@
     'os' => 'Operativni sistem',
     'version' => 'Verzija OS',
     'local_ip' => 'Lokalna IP adresa',
+    'interrupted' => 'Prekinuto.',
   },
   'sq' => {
     'ipv4_address' => 'Adresa IPv4',
@@ -572,6 +609,7 @@
     'os' => 'Sistemi operativ',
     'version' => 'Versioni OS',
     'local_ip' => 'IP lokal',
+    'interrupted' => 'Preritur.',
   },
   'mk' => {
     'ipv4_address' => 'IPv4 адреса',
@@ -583,6 +621,7 @@
     'os' => 'Оперативен систем',
     'version' => 'Верзија на OS',
     'local_ip' => 'Локална IP адреса',
+    'interrupted' => 'Прекинато.',
   },
   'sr' => {
     'ipv4_address' => 'IPv4 адреса',
@@ -594,6 +633,7 @@
     'os' => 'Оперативни систем',
     'version' => 'Верзија OS',
     'local_ip' => 'Локална IP адреса',
+    'interrupted' => 'Прекинуто.',
   },
     'he' => {
     'ipv4_address' => 'כתובת IPv4',
@@ -605,6 +645,7 @@
     'os' => 'מערכת הפעלה',
     'version' => 'גרסת OS',
     'local_ip' => 'IP מקומי',
+    'interrupted' => 'הופסק.',
     },
 }
 

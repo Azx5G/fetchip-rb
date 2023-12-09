@@ -9,8 +9,23 @@ require 'rbconfig'
 require_relative 'translations'
 require_relative 'countriesnativename'
 
+DEFAULT_REFRESH_INTERVAL = 60 # seconds
+CLEAR_COMMAND = RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/ ? 'cls' : 'clear'
 
+def parse_arguments
+  refresh_interval = nil
+  if ARGV.include?('-r')
+    refresh_index = ARGV.index('-r') + 1
+    if refresh_index < ARGV.size
+      interval = ARGV[refresh_index].to_i
+      refresh_interval = interval if interval > 0
+    end
+  end
+  refresh_interval
+end
 # Method to convert country code to flag emoji
+def fetch_and_display_ip_info
+  system(CLEAR_COMMAND)
 def country_code_to_flag_emoji(country_code)
   return '' if RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/
 
@@ -149,5 +164,22 @@ rescue SocketError => e
 rescue StandardError => e
   puts "An error occurred: #{e}"
   puts "This program got a general error. Please take a screenshot of the terminal window and report it at https://github.com/Azx5G/FetchIP-RB/issues"
+end
+
+
+end
+begin
+  refresh_interval = parse_arguments
+  if refresh_interval.nil?
+    fetch_and_display_ip_info
+    exit
+  end
+
+  loop do
+    fetch_and_display_ip_info
+    sleep(refresh_interval)
+  end
+rescue Interrupt
+  puts "\n Exiting..."
 end
 # frozen_string_literal: true

@@ -43,7 +43,8 @@ WARNING: This script does not work on Windows systems. Please follow the instruc
 1. Ensure Ruby is installed on your system (use the installation script if needed). And you are connected to the Internet.
 2. Download the `fetchip-rb.rb` script.
 3. Run the script in your terminal using the command `ruby fetchip-rb.rb`.
-4. Informations will appear in the terminal.
+4. You can also run the script to auto refresh IP details every # seconds using the command `ruby fetchip-rb.rb #` where # is the number of seconds to wait before refreshing. (e.g. `ruby fetchip-rb.rb 5` to refresh every 5 seconds)
+5. Informations will appear in the terminal.
 
 ## License
 
