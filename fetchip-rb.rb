@@ -145,7 +145,9 @@ rescue SocketError => e
   os_name = get_os_name(os, '')
   puts "Operating System: #{os_name}"
   puts "OS Version: #{os_version}"
+  puts "This program got an network error. Please check your internet connection. If you think this is a bug, please take a screenshot of the terminal window and report it at https://github.com/Azx5G/FetchIP-RB/issues"
 rescue StandardError => e
   puts "An error occurred: #{e}"
+  puts "This program got a general error. Please take a screenshot of the terminal window and report it at https://github.com/Azx5G/FetchIP-RB/issues"
 end
 # frozen_string_literal: true
