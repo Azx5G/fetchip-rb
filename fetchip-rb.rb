@@ -12,7 +12,7 @@ require_relative 'countriesnativename'
 DEFAULT_REFRESH_INTERVAL = 60 # seconds
 CLEAR_COMMAND = RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/ ? 'cls' : 'clear'
 
-def parse_arguments
+def parse_arguments()
   refresh_interval = nil
   if ARGV.include?('-r')
     refresh_index = ARGV.index('-r') + 1
@@ -24,8 +24,8 @@ def parse_arguments
   refresh_interval
 end
 # Method to convert country code to flag emoji
-def fetch_and_display_ip_info
-  system(CLEAR_COMMAND)
+def fetch_and_display_ip_info(clear_screen)
+  system(CLEAR_COMMAND) if clear_screen
 def country_code_to_flag_emoji(country_code)
   return '' if RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/
 
@@ -171,12 +171,12 @@ end
 begin
   refresh_interval = parse_arguments
   if refresh_interval.nil?
-    fetch_and_display_ip_info
+    fetch_and_display_ip_info(false)
     exit
   end
 
   loop do
-    fetch_and_display_ip_info
+    fetch_and_display_ip_info(true)
     sleep(refresh_interval)
   end
 rescue Interrupt
