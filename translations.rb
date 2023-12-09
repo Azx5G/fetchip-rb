@@ -147,6 +147,9 @@
   # Azerbaijani
   'AZ' => 'az',
 
+  # Hebrew
+  'IL' => 'he',
+
 
 
 }
@@ -592,5 +595,16 @@
     'version' => 'Верзија OS',
     'local_ip' => 'Локална IP адреса',
   },
+    'he' => {
+    'ipv4_address' => 'כתובת IPv4',
+    'ipv6_address' => 'כתובת IPv6',
+    'isp' => 'ספק שירותי אינטרנט',
+    'country' => 'מדינה',
+    'region' => 'אזור',
+    'city' => 'עיר',
+    'os' => 'מערכת הפעלה',
+    'version' => 'גרסת OS',
+    'local_ip' => 'IP מקומי',
+    },
 }
 

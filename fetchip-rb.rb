@@ -9,6 +9,7 @@ require 'rbconfig'
 require_relative 'translations'
 require_relative 'countriesnativename'
 
+
 # Method to convert country code to flag emoji
 def country_code_to_flag_emoji(country_code)
   return '' if RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/
@@ -110,6 +111,40 @@ begin
   end
 rescue SocketError => e
   puts "Network error: #{e}"
+  if File.exist?("/etc/os-release")
+    os_release_info = File.read("/etc/os-release")
+    distro_name = os_release_info.match(/^PRETTY_NAME="(.+)"$/)&.captures&.first
+  else
+    distro_name = 'Unknown Version'
+  end
+  # Determine the OS and the version
+  os = RbConfig::CONFIG['host_os']
+  case os
+  when /mswin|mingw|cygwin/
+    os_version = `wmic os get Caption`.split("\n")[2].strip
+  when /darwin|mac os/
+    os_version = "macOS #{`sw_vers -productVersion`.strip}"
+  when /linux/
+    os_version = distro_name
+  else
+    os_version = 'Unknown Version'
+  end
+  def get_os_name(os, os_version)
+    case os
+    when /mswin|mingw|cygwin/
+      "Windows"
+    when /darwin|mac os/
+      os_version = `sw_vers -productVersion`.strip
+      "macOS"
+    when /linux/
+      "Linux"
+    else
+      "Unknown OS"
+    end
+  end
+  os_name = get_os_name(os, '')
+  puts "Operating System: #{os_name}"
+  puts "OS Version: #{os_version}"
 rescue StandardError => e
   puts "An error occurred: #{e}"
 end
