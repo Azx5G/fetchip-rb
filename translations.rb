@@ -236,6 +236,7 @@
     'region' => 'Região',
     'city' => 'Cidade',
     'os' => 'Sistema Operacional',
+    'local_ip' => 'IP Local',
     'version' => 'Versão do SO',
     'interrupted' => 'Interrompido.',
   },
