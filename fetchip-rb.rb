@@ -23,7 +23,50 @@ def parse_arguments()
   end
   refresh_interval
 end
+
+def request_gdpr_consent
+  puts "This program collects and uses your IP address to retrieve information about it."
+  puts "Your data will be processed in compliance with GDPR."
+  puts "Do you consent to us and API services collecting and using your IP address? (Y/N)"
+  consent = gets.strip.upcase
+  consent == "Y"
+end
 # Method to convert country code to flag emoji
+
+begin
+  # Ask for consent before continuing
+  unless request_gdpr_consent
+
+    puts "Consent not given. The program will only display your OS and Version in English."
+    os = RbConfig::CONFIG['host_os']
+    case os
+    when /mswin|mingw|cygwin/
+      os_version = `wmic os get Caption`.split("\n")[2].strip
+    when /darwin|mac os/
+      os_version = "macOS #{`sw_vers -productVersion`.strip}"
+    when /linux/
+      os_version = distro_name
+    else
+      os_version = 'Unknown Version'
+    end
+    def get_os_name(os, os_version)
+      case os
+      when /mswin|mingw|cygwin/
+        "Windows"
+      when /darwin|mac os/
+        os_version = `sw_vers -productVersion`.strip
+        "macOS"
+      when /linux/
+        "Linux"
+      else
+        "Unknown OS"
+      end
+    end
+    os_name = get_os_name(os, '')
+    puts "Operating System: #{os_name}"
+    puts "OS Version: #{os_version}"
+    exit
+  end
 def fetch_and_display_ip_info(clear_screen)
   system(CLEAR_COMMAND) if clear_screen
 def country_code_to_flag_emoji(country_code)
@@ -182,4 +225,6 @@ begin
 rescue Interrupt
   puts "\n Exiting..."
 end
+end
+
 # frozen_string_literal: true
